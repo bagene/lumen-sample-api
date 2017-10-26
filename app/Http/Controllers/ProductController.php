@@ -25,19 +25,6 @@ class ProductController extends Controller
       return response()->json("Success",200);
     }
 
-    public function show($id){
-      $product = Product::find($id);
-
-      return response()->json($product,200);
-    }
-
-      ]);
-
-      $product = Product::find($id);
-      $product->update($request->all());
-
-      return response()->json("Success",200);
-    }
 
     public function destroy($id){
       $product = Product::find($id);
@@ -51,6 +38,6 @@ class ProductController extends Controller
       $test = Test::create([
         'test' => json_encode($_POST)
       ]);
-
+      dd($test->toJson());
     }
 }
