@@ -39,6 +39,7 @@ $app->group(['prefix' => 'api'], function () use ($app) {
 
 
   $app->post('test','ProductController@test');
+  $app->get('test','ProductController@testShow');
 
   // ORDER
   $app->get('orders', 'OrderController@index');

@@ -40,4 +40,13 @@ class ProductController extends Controller
       ]);
       dd($test->toJson());
     }
+
+    public function testShow(){
+      $tests = Test::all();
+      $str = "";
+      foreach ($tests as $key => $value) {
+        $str .= $value->toJson() . "<br>" . "<br>" . "<br>";
+      }
+      dd($str);
+    }
 }
