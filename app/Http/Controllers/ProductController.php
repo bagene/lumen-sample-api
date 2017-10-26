@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+
 use App\Test;
 
 class ProductController extends Controller
@@ -15,7 +16,6 @@ class ProductController extends Controller
       $this->validate($request, [
         'name' => 'required',
         'price' => 'required',
-        'seller_id' => 'required',
       ]);
 
       Product::create($request->all());
@@ -29,11 +29,6 @@ class ProductController extends Controller
       return response()->json($product,200);
     }
 
-    public function update($id,Request $request){
-      $this->validate($request, [
-        'name' => 'required',
-        'price' => 'required',
-        'seller_id' => 'required',
       ]);
 
       $product = Product::find($id);

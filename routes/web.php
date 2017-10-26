@@ -30,12 +30,21 @@ $app->group(['prefix' => 'api'], function () use ($app) {
   $app->patch('customers/{id}', 'CustomerController@update');
   $app->delete('customers/{id}', 'CustomerController@destroy');
 
-  // CUSTOMER
+  // PRODUCTS
   $app->get('products', 'ProductController@index');
   $app->post('products', 'ProductController@store');
   $app->get('products/{id}', 'ProductController@show');
   $app->patch('products/{id}', 'ProductController@update');
   $app->delete('products/{id}', 'ProductController@destroy');
 
+
   $app->post('test','ProductController@test');
+
+  // ORDER
+  $app->get('orders', 'OrderController@index');
+  $app->post('orders', 'OrderController@store');
+  $app->get('orders/{id}', 'OrderController@show');
+  $app->patch('orders/{id}', 'OrderController@update');
+  $app->delete('orders/{id}', 'OrderController@destroy');
+
 });
